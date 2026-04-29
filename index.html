@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nhập mật khẩu</title>
+</head>
+<body style="text-align:center; font-family:sans-serif; margin-top:100px;">
+  <h2>🔒 Nhập mật khẩu để xem bài thuyết trình</h2>
+  <input type="password" id="pass" placeholder="minh5a@@">
+  <br><br>
+  <button onclick="check()">Vào</button>
+
+  <p id="msg" style="color:red;"></p>
+
+  <script>
+    function check() {
+      var password = document.getElementById("pass").value;
+      if(password === "123456") { 
+        window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
+      } else {
+        document.getElementById("msg").innerText = "Sai mật khẩu rồi 😢";
+      }
+    }
+  </script>
+</body>
+</html>
