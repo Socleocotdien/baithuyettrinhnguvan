@@ -87,8 +87,14 @@
 </div>
 <video id="intro" src="videogioithieu.mp4"
   style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover;"
-  muted playsinline>
+  controls>
 </video>
+
+  <button id="enterBtn"
+  style="display:none; position:fixed; bottom:40px; left:50%; transform:translateX(-50%);
+  padding:12px 25px; border:none; border-radius:10px; background:gold; font-weight:bold; cursor:pointer;">
+  Khám phá Dinh Độc Lập
+</button>
 
 <script>
   function check() {
@@ -96,7 +102,7 @@
 
     if(password === "to49a6") {
 
-      // Ẩn form nhập mật khẩu
+      // Ẩn form
       document.querySelector(".box").style.display = "none";
 
       // Hiện video
@@ -104,17 +110,20 @@
       video.style.display = "block";
       video.play();
 
-      // Khi video kết thúc → chuyển trang
+      // Khi video kết thúc → hiện nút
       video.onended = function() {
-        window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
+        document.getElementById("enterBtn").style.display = "block";
       };
 
     } else {
       document.getElementById("msg").innerText =
-        "muhahahaha sai mật khẩu rồi muhahahaha 1 là mày là người đột nhập 2 là một chú gà ngây thơ vào xem thử 3 là thằng Minh quên mặt khẩu. Ôi bạn thật là chicken😈";
-    }
+        "muhahahaha sai mật khẩu rồi muhahahaha 1 là mày là người đột nhập 2 là một chú gà ngây thơ vào xem thử 3 là thằng Minh quên mặt khẩu. Ôi bạn thật là chicken😈";    }
   }
-</script>
 
+  // Bấm nút → vào VR360
+  document.getElementById("enterBtn").onclick = function() {
+    window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
+  };
+</script>
 </body>
 </html>
