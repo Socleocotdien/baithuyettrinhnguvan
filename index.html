@@ -116,8 +116,11 @@ var video = document.getElementById("intro");
 video.style.display = "block";
 
 video.play().then(() => {
-  video.muted = false; // bật lại âm thanh
+  video.muted = false;
 });
+
+// hiện nút skip
+document.getElementById("skipBtn").style.display = "block";
 
       // Khi video kết thúc → hiện nút
       video.onended = function() {
@@ -129,10 +132,13 @@ video.play().then(() => {
         "muhahahaha sai mật khẩu rồi muhahahaha 1 là mày là người đột nhập 2 là một chú gà ngây thơ vào xem thử 3 là thằng Minh quên mặt khẩu. Ôi bạn thật là chicken😈";    }
   }
 
-  // Bấm nút → vào VR360
+   // nút vào VR360
   document.getElementById("enterBtn").onclick = function() {
     window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
   };
+
+  // nút skip
+  document.getElementById("skipBtn").onclick = function() {
+    window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
+  };
 </script>
-</body>
-</html>
