@@ -3,23 +3,34 @@
 <head>
   <title>Nhập mật khẩu</title>
 </head>
-<body style="text-align:center; font-family:sans-serif; margin-top:100px;">
-  <h2>🔒 Nhập mật khẩu để xem bài thuyết trình</h2>
-  <input type="password" id="pass" placeholder="minh5a@@">
-  <br><br>
-  <button onclick="check()">Vào</button>
 
-  <p id="msg" style="color:red;"></p>
+<body style="text-align:center; font-family:sans-serif; margin-top:100px; background:#f5f5f5;">
+
+  <h2>🔒 Nhập mật khẩu để xem bài thuyết trình</h2>
+
+  <input type="password" id="pass" placeholder="Nhập mật khẩu"
+    onkeypress="if(event.key==='Enter') check()"
+    style="padding:10px; border-radius:8px; border:1px solid #ccc;">
+  
+  <br><br>
+
+  <button onclick="check()"
+    style="padding:10px 20px; border:none; border-radius:8px; background:black; color:white; cursor:pointer;">
+    Vào
+  </button>
+
+  <p id="msg" style="color:red; margin-top:15px;"></p>
 
   <script>
     function check() {
       var password = document.getElementById("pass").value;
-      if(password === "123456") { 
+      if(password === "to49a6") { 
         window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
       } else {
-        document.getElementById("msg").innerText = "Sai mật khẩu rồi 😢";
+        document.getElementById("msg").innerText = "muhahahahahah sai mật khẩu bà nó rồi 1 là mày là người đột nhập 2 là thằng Minh quên mặt khẩu 3 là người khác. Ôi bạn thật là chicken 😈";
       }
     }
   </script>
+
 </body>
 </html>
