@@ -2,32 +2,113 @@
 <html>
 <head>
   <title>Nhập mật khẩu</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102,126,234,0.5);
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    #msg {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .shake {
+      animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
 </head>
 
-<body style="text-align:center; font-family:sans-serif; margin-top:100px; background:#f5f5f5;">
+<body>
 
-  <h2>🔒 Nhập mật khẩu để xem bài thuyết trình</h2>
+  <div class="box" id="box">
+    <h2>🔒 Nhập mật khẩu</h2>
 
-  <input type="password" id="pass" placeholder="Nhập mật khẩu"
-    onkeypress="if(event.key==='Enter') check()"
-    style="padding:10px; border-radius:8px; border:1px solid #ccc;">
-  
-  <br><br>
+    <input type="password" id="pass" placeholder="Nhập mật khẩu"
+      onkeypress="if(event.key==='Enter') check()">
 
-  <button onclick="check()"
-    style="padding:10px 20px; border:none; border-radius:8px; background:black; color:white; cursor:pointer;">
-    Vào
-  </button>
+    <button onclick="check()">Vào</button>
 
-  <p id="msg" style="color:red; margin-top:15px;"></p>
+    <p id="msg"></p>
+  </div>
 
   <script>
     function check() {
       var password = document.getElementById("pass").value;
-      if(password === "to49a6") { 
+      var box = document.getElementById("box");
+
+      if(password === "to49a6") {
         window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
       } else {
-        document.getElementById("msg").innerText = "muhahahahahah sai mật khẩu bà nó rồi 1 là mày là người đột nhập 2 là thằng Minh quên mặt khẩu 3 là người khác. Ôi bạn thật là chicken 😈";
+        document.getElementById("msg").innerText = "Sai mật khẩu rồi 😏";
+        box.classList.add("shake");
+
+        setTimeout(() => {
+          box.classList.remove("shake");
+        }, 300);
       }
     }
   </script>
