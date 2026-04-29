@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nhập mật khẩu</title>
+  <title>Dinh Độc Lập</title>
+
   <style>
     body {
       margin: 0;
@@ -10,17 +11,30 @@
       justify-content: center;
       align-items: center;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+
+      background: url("https://images.unsplash.com/photo-1564507592333-c60657eea523") no-repeat center;
+      background-size: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
     }
 
     .box {
-      background: white;
+      position: relative;
+      z-index: 1;
       padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      width: 320px;
       text-align: center;
-      width: 300px;
-      animation: fadeIn 0.6s ease;
+
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255,215,0,0.3);
+      color: white;
     }
 
     h2 {
@@ -31,27 +45,20 @@
       width: 100%;
       padding: 12px;
       border-radius: 10px;
-      border: 1px solid #ccc;
+      border: none;
       outline: none;
-      transition: 0.2s;
-    }
-
-    input:focus {
-      border-color: #667eea;
-      box-shadow: 0 0 5px rgba(102,126,234,0.5);
+      margin-bottom: 15px;
     }
 
     button {
-      margin-top: 15px;
       width: 100%;
       padding: 12px;
-      border: none;
       border-radius: 10px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
+      border: none;
+      background: linear-gradient(135deg, gold, orange);
+      color: black;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.2s;
     }
 
     button:hover {
@@ -59,59 +66,37 @@
     }
 
     #msg {
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    .shake {
-      animation: shake 0.3s;
-    }
-
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-5px); }
-      50% { transform: translateX(5px); }
-      75% { transform: translateX(-5px); }
-      100% { transform: translateX(0); }
+      margin-top: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="box" id="box">
-    <h2>🔒 Nhập mật khẩu</h2>
+<div class="overlay"></div>
 
-    <input type="password" id="pass" placeholder="Nhập mật khẩu"
-      onkeypress="if(event.key==='Enter') check()">
+<div class="box">
+  <h2>🔒 Dinh Độc Lập</h2>
 
-    <button onclick="check()">Vào</button>
+  <input type="password" id="pass" placeholder="Nhập mật khẩu"
+    onkeypress="if(event.key==='Enter') check()">
 
-    <p id="msg"></p>
-  </div>
+  <button onclick="check()">Vào</button>
 
-  <script>
-    function check() {
-      var password = document.getElementById("pass").value;
-      var box = document.getElementById("box");
+  <p id="msg"></p>
+</div>
 
-      if(password === "to49a6") {
-        window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
-      } else {
-        document.getElementById("msg").innerText = "Sai mật khẩu rồi 😏";
-        box.classList.add("shake");
+<script>
+  function check() {
+    var password = document.getElementById("pass").value;
 
-        setTimeout(() => {
-          box.classList.remove("shake");
-        }, 300);
-      }
+    if(password === "to49a6") {
+      window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
+    } else {
+      document.getElementById("msg").innerText = "muhahahaha sai mật khẩu rồi muhahahaha 1 là mày là người đột nhập 2 là một chú gà ngây thơ vào xem thử 3 là thằng Minh quên mặt khẩu. Ôi bạn thật là chicken😈";
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
