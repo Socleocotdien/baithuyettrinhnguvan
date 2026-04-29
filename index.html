@@ -105,10 +105,13 @@
       // Ẩn form
       document.querySelector(".box").style.display = "none";
 
-      // Hiện video
-      var video = document.getElementById("intro");
-      video.style.display = "block";
-      video.play();
+     // Hiện video
+var video = document.getElementById("intro");
+video.style.display = "block";
+
+video.play().then(() => {
+  video.muted = false; // bật lại âm thanh
+});
 
       // Khi video kết thúc → hiện nút
       video.onended = function() {
