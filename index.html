@@ -92,9 +92,23 @@
     var password = document.getElementById("pass").value;
 
     if(password === "to49a6") {
-      window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
+
+      // Ẩn form nhập mật khẩu
+      document.querySelector(".box").style.display = "none";
+
+      // Hiện video
+      var video = document.getElementById("intro");
+      video.style.display = "block";
+      video.play();
+
+      // Khi video kết thúc → chuyển trang
+      video.onended = function() {
+        window.location.href = "https://vr360.com.vn/projects/dinhdoclap/";
+      };
+
     } else {
-      document.getElementById("msg").innerText = "muhahahaha sai mật khẩu rồi muhahahaha 1 là mày là người đột nhập 2 là một chú gà ngây thơ vào xem thử 3 là thằng Minh quên mặt khẩu. Ôi bạn thật là chicken😈";
+      document.getElementById("msg").innerText =
+        "muhahahaha sai mật khẩu rồi muhahahaha 1 là mày là người đột nhập 2 là một chú gà ngây thơ vào xem thử 3 là thằng Minh quên mặt khẩu. Ôi bạn thật là chicken😈";
     }
   }
 </script>
